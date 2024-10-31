@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Map, { Marker } from "react-map-gl";
+import Map, { MapRef, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import CustomPin from "./customPin";
 import LegendCard from "./legendCard";
@@ -21,7 +21,7 @@ const placeholder: legendType = {
 
 export default function HauntedMap() {
   const [legend, setLegend] = useState<legendType>(placeholder);
-  const mapRef = useRef<any>(null);
+  const mapRef = useRef<MapRef | null>(null);
   const { current: map } = mapRef;
   const [viewState, setViewState] = useState({
     longitude: -100,
@@ -29,10 +29,10 @@ export default function HauntedMap() {
     zoom: 2,
   });
 
-  const isEmpty = (obj: Record<string, any>): boolean => {
-    return Object.values(obj).some(
-      (value) => typeof value === "string" && value.trim() === ""
-    );
+  const isEmpty = (obj: legendType): boolean => {
+    return Object.values(obj)
+      .filter(value => typeof value === "string") // Filtra solo los valores de tipo string
+      .some(value => value.trim() === ""); // Comprueba si hay algún string vacío
   };
 
   const handleClick = ({
