@@ -19,7 +19,7 @@ const config: Config = {
       keyframes: {
         "slow-pulse": {
           "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.7" },
+          "50%": { opacity: "0.5" },
         },
         fadeOut: {
           "0%": { opacity: "0" },
