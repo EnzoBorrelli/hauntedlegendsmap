@@ -9,7 +9,7 @@ interface PinProps {
 export default function CustomPin({ onClick, icon }: PinProps) {
   return (
     <button onClick={onClick}>
-      <Image src={icon} alt="pinIcon" width={20} height={20} />
+      <Image src={icon} alt="pinIcon" width={35} height={35} />
     </button>
   );
 }
