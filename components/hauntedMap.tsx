@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Map, { MapRef, Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import CustomPin from "./customPin";
@@ -15,8 +15,8 @@ const placeholder: legendType = {
   country: "",
   date: "",
   origin: "",
-  coords:[0,0],
-  icon:'/markerIcons/halloweenMark.ico'
+  coords: [0, 0],
+  icon: "/markerIcons/halloweenMark.ico",
 };
 
 export default function HauntedMap() {
@@ -31,9 +31,22 @@ export default function HauntedMap() {
 
   const isEmpty = (obj: legendType): boolean => {
     return Object.values(obj)
-      .filter(value => typeof value === "string") // Filtra solo los valores de tipo string
-      .some(value => value.trim() === ""); // Comprueba si hay algún string vacío
+      .filter((value) => typeof value === "string") // Filtra solo los valores de tipo string
+      .some((value) => value.trim() === ""); // Comprueba si hay algún string vacío
   };
+
+  useEffect(() => {
+    if (legend === placeholder) {
+      if (map) {
+        map.flyTo({
+          // Longitud y latitud
+          zoom: 2,
+          speed: 1.2,
+          curve: 1.5,
+        });
+      }
+    }
+  }, [legend]);
 
   const handleClick = ({
     lng,
@@ -65,7 +78,11 @@ export default function HauntedMap() {
         mapStyle="mapbox://styles/endy-kaishi/cm2x9r11000h201pd4mll215g"
       >
         {legends.map((legend, index) => (
-          <Marker key={index} longitude={legend.coords[0]} latitude={legend.coords[1]}>
+          <Marker
+            key={index}
+            longitude={legend.coords[0]}
+            latitude={legend.coords[1]}
+          >
             <CustomPin
               icon={legend.icon}
               onClick={() =>
