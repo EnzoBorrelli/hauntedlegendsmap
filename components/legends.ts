@@ -40,7 +40,7 @@ export const legends: legendType[] = [
     icon: "/markerIcons/halloweenMark.ico",
   },
   {
-    title: "The Whistler",
+    title: "El Silbón",
     img: "/hauntedImgs/whistler.webp",
     country: "Venezuela",
     date: "19th Century",
@@ -88,5 +88,65 @@ export const legends: legendType[] = [
       "Eerie children with pale skin and pitch-black eyes appear at night, asking to be let into homes or cars. People report feeling an overwhelming sense of dread in their presence.",
     coords: [-99.64306300764791, 32.507499829901036],
     icon: "/markerIcons/ghostMark.ico",
+  },
+  {
+    title: "Kuchisake-onna",
+    img: "/hauntedImgs/kuchisake.jpg",
+    country: "Japan",
+    date: "Edo Period",
+    origin:
+      "A spirit wearing a mask asks people if they think she is beautiful. If they say yes, she reveals her gruesome, slit mouth; if they say no, she may kill them; if they say yes, she will slit their mouth to resemble hers.",
+    coords: [139.707763, 35.700193],
+    icon: "/markerIcons/killMark.ico",
+  },
+  {
+    title: "De Vliegende Hollander",
+    img: "/hauntedImgs/dutchman.jpg",
+    country: "Netherlands",
+    date: "17th Century",
+    origin:
+      "A ghost ship doomed to sail the seas forever. Sightings of the ship are said to be omens of disaster for sailors.",
+    coords: [5.161691, 53.147183],
+    icon: "/markerIcons/ghostMark.ico",
+  },
+  {
+    title: "The Bunyip",
+    img: "/hauntedImgs/bunyip.jpg",
+    country: "Australia",
+    date: "???",
+    origin:
+      "Is said to inhabit swamps, creeks, and waterholes. Descriptions vary, but it is often depicted as a large, fearsome animal. Indigenous Australians tell stories of the Bunyip as a protector of the water and a warning against venturing too close to dangerous areas.",
+    coords: [148.77582, -20.27132],
+    icon: "/markerIcons/halloweenMark.ico",
+  },
+  {
+    title: "Nessie",
+    img: "/hauntedImgs/nessie.webp",
+    country: "Scotland",
+    date: "1930",
+    origin:
+      "Nessie is said to be a large, long-necked creature that resides in Loch Ness. Witnesses often describe it as having one or more humps above the water, resembling a plesiosaur.",
+    coords: [-4.42278, 57.349],
+    icon: "/markerIcons/halloweenMark.ico",
+  },
+  {
+    title: "Jack O' Lantern",
+    img: "/hauntedImgs/jack.jpg",
+    country: "Hallow",
+    date: "¿¿¿",
+    origin:
+      "Surely, you didn’t think I would pass up the chance to be here, did you?",
+    coords: [-31.1, 10.31],
+    icon: "/markerIcons/jack.ico",
+  },
+  {
+    title: "The Death Itself",
+    img: "/hauntedImgs/death.jpg",
+    country: "???",
+    date: "¿¿¿",
+    origin:
+      "Each heartbeat is a gift, a fleeting moment in the dance of life. Embrace it! Live fully, love fiercely, and create memories that linger even after you’re gone.",
+    coords: [-66.6, 66.6],
+    icon: "/markerIcons/theReaper.ico",
   },
 ];
